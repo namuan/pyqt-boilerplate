@@ -5,13 +5,13 @@ import attr
 
 @attr.s(auto_attribs=True)
 class AppConfig:
-    NOTES_FILE_KEY: ClassVar[str] = "notesFile"
-    _notes_file: str = ""
+    ITEM_CHECK: ClassVar[str] = "sampleConfigItem"
+    _item_check: bool = True
 
     @property
-    def notes_file(self):
-        return self._notes_file
+    def item_checked(self):
+        return self._item_check
 
-    @notes_file.setter
-    def notes_file(self, val):
-        self._notes_file = val
+    @item_checked.setter
+    def item_checked(self, val):
+        self._item_check = val

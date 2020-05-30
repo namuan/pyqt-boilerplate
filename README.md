@@ -28,7 +28,7 @@
 
 👉 Rotating log file
 
-👉 Application data persistence support
+👉 Application data persistence support using Sqlite database
 
 ### Light/Dark Themes
 
@@ -43,7 +43,7 @@ The following make commands can be used for setting up virtual env and running t
 Setup a new virtual env in venv folder and install all the dependencies listed in requirements/dev.txt
 
 ```
-$ make venv
+$ make setup
 ```
 
 Run application

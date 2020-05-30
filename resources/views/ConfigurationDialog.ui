@@ -45,27 +45,17 @@
     <attribute name="title">
      <string>Notes</string>
     </attribute>
-    <widget class="QLineEdit" name="txt_notes_file">
+    <widget class="QCheckBox" name="chkAppOption">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>20</y>
-       <width>381</width>
-       <height>21</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QToolButton" name="btn_select_notes_file">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>20</y>
-       <width>26</width>
-       <height>22</height>
+       <width>201</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string>...</string>
+      <string>App configuration option</string>
      </property>
     </widget>
    </widget>

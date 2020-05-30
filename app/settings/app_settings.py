@@ -6,7 +6,7 @@ from typing import Any, Union
 from PyQt5.QtCore import QSettings, QStandardPaths
 from PyQt5.QtWidgets import qApp
 
-from app.data.data_store import DataStore
+from app.data import LiteDataStore
 from app.settings.app_config import AppConfig
 
 
@@ -18,7 +18,7 @@ class AppSettings:
         self.docs_location: Path = Path(
             QStandardPaths.writableLocation(QStandardPaths.DocumentsLocation)
         )
-        self.data: DataStore = None
+        self.data: LiteDataStore = None
 
     def init(self):
         self.app_name = qApp.applicationName().lower()
@@ -31,8 +31,7 @@ class AppSettings:
             self.app_dir.joinpath(settings_file).as_posix(), QSettings.IniFormat
         )
         self.settings.sync()
-        app_config = self.load_configuration()
-        self.data = DataStore(app_config.notes_file)
+        self.data = LiteDataStore(self.app_dir)
 
     def init_logger(self):
         log_file = f"{self.app_name}.log"
@@ -57,15 +56,14 @@ class AppSettings:
         self.settings.sync()
 
     def save_configuration(self, app_config: AppConfig):
-        self.settings.setValue(AppConfig.NOTES_FILE_KEY, app_config.notes_file)
+        self.settings.setValue(AppConfig.ITEM_CHECK, app_config.item_checked)
         self.settings.sync()
-        self.data.update_store(app_config.notes_file)
 
     def load_configuration(self):
         app_config = AppConfig()
-        app_config.notes_file = self.settings.value(
-            AppConfig.NOTES_FILE_KEY,
-            app_config.notes_file or f"{self.app_dir}/onepage.txt",
+        app_config.item_checked = self.settings.value(
+            AppConfig.ITEM_CHECK,
+            app_config.item_checked,
         )
         return app_config
 

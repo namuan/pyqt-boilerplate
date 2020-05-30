@@ -1,5 +1,3 @@
-from PyQt5.QtWidgets import QFileDialog
-
 from app.settings.app_config import AppConfig
 from app.views.configuration_dialog import ConfigurationDialog
 
@@ -13,14 +11,6 @@ class ConfigController:
         # ui events
         self.view.btn_save_configuration.pressed.connect(self.on_success)
         self.view.btn_cancel_configuration.pressed.connect(self.ignore_changes)
-        self.view.btn_select_notes_file.pressed.connect(self.select_notes_file)
-
-    def select_notes_file(self):
-        file_location, _ = QFileDialog.getSaveFileName(
-            self.parent_view, "Select Notes File", self.app.app_dir.as_posix()
-        )
-        if file_location:
-            self.view.txt_notes_file.setText(file_location)
 
     def ignore_changes(self):
         self.view.reject()
@@ -37,8 +27,8 @@ class ConfigController:
 
     def form_to_object(self):
         config = AppConfig()
-        config.notes_file = self.view.txt_notes_file.text()
+        config.item_checked = self.view.chkAppOption.isChecked()
         return config
 
     def object_to_form(self, app_config: AppConfig):
-        self.view.txt_notes_file.setText(app_config.notes_file)
+        self.view.chkAppOption.setChecked(app_config.item_checked)

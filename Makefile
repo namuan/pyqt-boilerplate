@@ -17,7 +17,7 @@ black: ## Runs black for code formatting
 lint: black ## Runs Flake8 for linting
 	flake8 app
 
-venv: ## Re-initiates virtualenv
+setup: clean ## Re-initiates virtualenv
 	rm -rf venv
 	python3 -m venv venv
 	./venv/bin/python3 -m pip install -r requirements/dev.txt
@@ -32,7 +32,7 @@ res: ## Generates and compresses resource listed in resources/resources.qrc
 	./venv/bin/pyrcc5 -compress 9 -o app/generated/resources_rc.py resources/resources.qrc
 
 run: ## Runs the application
-	export PYTHONPATH=`pwd`:$PYTHONPATH && python app/__main__.py
+	export PYTHONPATH=`pwd`:$PYTHONPATH && ./venv/bin/python3 app/__main__.py
 
 icns: ## Generates icon files from svg
 	echo "Run ./mk-icns.sh resources/icons/app.svg app"
