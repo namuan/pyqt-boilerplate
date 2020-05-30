@@ -1,0 +1,6 @@
+/* Styles for Dark theme
+
+QMainWindow {
+  background-color: #000000;
+}
+*/

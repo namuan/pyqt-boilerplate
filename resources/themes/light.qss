@@ -1,0 +1,6 @@
+/* Styles for Light theme
+
+QMainWindow {
+  background-color: #000000;
+}
+*/

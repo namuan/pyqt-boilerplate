@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fonts/JetBrainsMono-Regular.ttf</file>
+        <file>themes/light.qss</file>
+        <file>themes/dark.qss</file>
+        <file>themes/pyg-dark.css</file>
+        <file>themes/pyg-light.css</file>
+        <file>icons/app.icns</file>
+        <file>icons/app.ico</file>
+        <file>icons/app.svg</file>
+        <file>images/configure-48.png</file>
+    </qresource>
+</RCC>
