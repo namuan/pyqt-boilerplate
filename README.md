@@ -84,6 +84,8 @@ $ ./mk-icns.sh
 
 ### Credits
 
-https://github.com/gmarull/pyside2-boilerplate
-https://github.com/zenorocha/dracula-theme
-https://icons8.com
+🙏 https://github.com/gmarull/pyside2-boilerplate
+
+🙏 https://github.com/zenorocha/dracula-theme
+
+🙏 https://icons8.com
