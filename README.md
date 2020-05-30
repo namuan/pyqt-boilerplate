@@ -12,6 +12,8 @@
 
 👉 Separate requirements file for development and build
 
+👉 Manage UI files and resources from QtDesigner
+
 👉 Resource files and application icon
 
 👉 Make file to set up virtualenv, run and test application
@@ -82,5 +84,6 @@ $ ./mk-icns.sh
 
 ### Credits
 
+https://github.com/gmarull/pyside2-boilerplate
 https://github.com/zenorocha/dracula-theme
 https://icons8.com
